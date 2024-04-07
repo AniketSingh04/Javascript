@@ -29,10 +29,25 @@ true => 1; false => 0;
 "<any string>" -> true
 */
 
-let someNumber = 45
-let str = String(someNumber)
-console.log(str);
-console.log(typeof(str));
+// let someNumber = 45
+// let str = String(someNumber)
+// console.log(str);
+// console.log(typeof(str));
 /*
 45 => "45"
 */
+
+//--------------------------Operations-------------------------------
+
+// let str1 = "hello"
+// let str2 = " aniket"
+// console.log(str1+str2)
+
+// console.log("1" + 2)
+// console.log(1 + "2")
+
+console.log(1+2+"22") //322
+console.log("1"+2+2)  //122
+
+
+//study more baout operators in js mdn doc
