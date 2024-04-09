@@ -32,8 +32,29 @@ const obj3 = {...obj1, ...obj2}; //merging two objects
 //const obj3 = Object.assign({},obj1,obj2); //merging two objects and returning as a new object
 // console.log(obj3);
 
-console.log(tinderUser);
-console.log(Object.keys(tinderUser)); //keys are shown in array
-console.log(Object.values(tinderUser)); //values are shown in array
-console.log(Object.entries(tinderUser)); //every element is shown in array
-console.log(tinderUser.hasOwnProperty('email')); //checks if the key is there in object
+// console.log(tinderUser);
+// console.log(Object.keys(tinderUser)); //keys are shown in array
+// console.log(Object.values(tinderUser)); //values are shown in array
+// console.log(Object.entries(tinderUser)); //every element is shown in array
+// console.log(tinderUser.hasOwnProperty('email')); //checks if the key is there in object
+
+//++++++++++++++++++++++++++++++++ destructure and json api++++++++++++++++++++++++
+
+const course =  {
+    course_name : "backend dev",
+    price : 1000,
+    courseInstructor : "freecodecamp",
+}
+
+const {courseInstructor: instructor /*alias*/} = course;
+
+console.log(instructor);
+
+
+//json file
+//both keys and values are strings in json
+// {
+//     "name" : "aniket raj singh",
+//     "age" : 21,
+//     "gender" : "male"
+// };
