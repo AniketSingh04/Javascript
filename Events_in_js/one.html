@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = function(){
+    //     alert('Yo ho ho ho');
+    // }
+
+    // attachEvent()
+    // jQuery - on
+
+    //important event properties
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    //event_propagation -> event-bubbling and event-capturing
+     
+    
+    //event bubbling -> Bottom-Up
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false); 
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("clicked on owl");
+    //     e.stopPropagation(); //bubbling wont happen
+    // }, false);
+
+    // // //event capturing -> Top Down
+    // // document.getElementById('images').addEventListener('click', function(e){
+    // //     console.log("clicked inside the ul");
+    // // }, true);
+
+    // // document.getElementById('owl').addEventListener('click', function(e){
+    // //     console.log("clicked on owl");
+    // // }, true);
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault(); //stop the default action
+    //     e.stopPropagation(); //stop the bubbling
+    //     console.log('google clicked');
+    // },false);
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e); //always check whether the event is listening
+
+        //chcek the below statements one by one in the console
+        // console.log(e.type); //event type - click
+        // console.log(e.timeStamp); //returns the time (in milliseconds) at which the event was created.
+        // console.log(e.defaultPrevented); //A boolean value, where true indicates that the default user agent action was prevented, and false indicates that it was not.
+        // console.log(e.clientX, e.clientY); //cordinates
+        // console.log(e.screenX, e.screenY); //cordinates
+        //console.log(e.target); //reference to the object onto which the event was dispatched.
+        //console.log(e.target.parentNode); // li is the parent node of target here
+        
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            console.log(e.target.parentNode.remove()); //to tackle li tags as their parent node is ul
+        }
+        //console.log(e.target.parentNode.remove()); //removes li
+
+    },false)
+
+ 
+
+
+
+
+
+
+</script>
+</html>
