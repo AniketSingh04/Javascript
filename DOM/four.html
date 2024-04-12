@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Youtube | Video-4</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul>
+        <li class = "language">Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li'); //create a new element  'li' inside the document
+        li.innerHTML = `${langName}`;
+        //langName ko ul m attach krna hai to ul ko phle select krenge
+        const ul = document.querySelector('.language'); //select ul
+        ul.appendChild(li); //attach the li to the ul
+    }
+</script>
+
+</html>
