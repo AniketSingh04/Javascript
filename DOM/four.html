@@ -6,8 +6,8 @@
     <title>DOM | Youtube | Video-4</title>
 </head>
 <body style="background-color: black; color: white;">
-    <ul>
-        <li class = "language">Javascript</li>
+    <ul class = 'language'>
+        <li>Javascript</li>
     </ul>
 </body>
 <script>
@@ -18,6 +18,51 @@
         const ul = document.querySelector('.language'); //select ul
         ul.appendChild(li); //attach the li to the ul
     }
+    addLanguage('python');
+    addLanguage('c++');
+
+    //for large-scale project, the tree has to be traversed down which is not optimal in some cases
+    //here, it is only one list 'li', so there wont be much issue in optimizatin
+
+    function addLanguage_Optimised(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName)); //refer to three.html 
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage_Optimised('typescript');
+    // addLanguage_Optimised('Java');
+    // addLanguage_Optimised('Kotlin');
+
+    //Editing an element
+    const secondLang = document.querySelector("li:nth-child(2)"); //select the second element
+    //The ":nth-child(2)" selector is a CSS pseudo-class selector that selects the second child element of its parent.
+    console.log(secondLang);
+    //secondLang.innerHTML = "Mojo"; //change the innerHTML; not an optimised way
+    const newli = document.createElement('li');
+    newli.textContent = "MOJO";
+    secondLang.replaceWith(newli);
+
+    //or
+
+    // const secondLang = document.querySelector("li:nth-child(2)"); // select the second element
+    // const textNode = document.createTextNode("MOJO"); // create a text node with the desired text
+    // secondLang.textContent = ""; // clear the existing content of the second element
+    // secondLang.appendChild(textNode); // append the new text node to the second element
+
+    //Editing the first element
+    const firstlang = document.querySelector('li:first-child');
+    console.log(firstlang);
+    // const firstli = document.createElement('li');
+    // firstlang.replaceWith(firstli.textContent = "SQL");
+    firstlang.outerHTML = '<li>SQL</li>';
+
+    //removing an element
+    const lastLang = document.querySelector('li:last-child');
+    lastLang.remove(); //remove the last element
+
+
+
+
 </script>
 
 </html>
