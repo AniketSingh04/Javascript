@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Youtube | Video-3</title>
+</head>
+<body style="background-color: beige; color: #fff; "> 
+</body>
+
+<script>
+    //every element is inside the document
+
+    const div = document.createElement('div'); // Create a new div element
+    console.log(div);
+   
+    div.className = 'main'; //adding a class in the div element
+    div.id = Math.round((Math.random()*10)+1); //adding an id in the div element
+    div.setAttribute("title", "generated-title"); // adding an attribute in the div element
+    
+    //adding some style in the element div
+    div.style.backgroundColor = 'black';
+    div.style.color = 'red';
+    div.style.padding = '14px';
+    div.style.borderRadius = '12px';
+    div.style.height = '15px';
+    div.style.width = '100px'; //suitable for the upcoming text node
+
+    // innerText and TextNode create krke add krna are both same
+    //div.innerText = "Aniket Raj Singh"; //adding a text in div
+    const addText = document.createTextNode("aniket raj singh"); // Creates a new text node with the content "aniket raj singh"
+    div.appendChild(addText); // Adds the text node to the div element
+    
+    document.body.appendChild(div); // Adds the div element to the document body
+</script>
+</html>
