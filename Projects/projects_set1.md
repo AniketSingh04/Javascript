@@ -65,11 +65,23 @@ form.addEventListener('submit', function(event){
         else result.innerHTML = `<span>Over weight,${bmi}</span>`;
     }
 });
+```
+
+## project 3
+```javascript
+const clock = document.getElementById('clock');
+
+setInterval(function(){ //setInterval calls a function or executes a code snippet, with a fixed time delay between each call.
+    let date = new Date();
+    //console.log(date.toLocaleTimeString());
+    clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
+
+```
 
 
-
-
-
+## project 4
+```javascript
 
 
 
